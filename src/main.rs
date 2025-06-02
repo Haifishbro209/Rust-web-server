@@ -10,7 +10,6 @@ fn problem_notification(problem_message:String){
 }
 
 fn main() {
-    println!("Hello, world!");
     let listener =match TcpListener::bind("127.0.0.1:7878") {
         Ok(listerer) => listerer,
         Err(error) => 
@@ -23,7 +22,7 @@ fn main() {
     loop{
         match listener.accept() {
             Ok((stream, adr)) => {
-                print!("stream {}",adr);
+                println!("stream {}",adr);
                 
             }
             Err(error) => {
